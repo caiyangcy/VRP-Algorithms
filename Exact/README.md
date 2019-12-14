@@ -1,42 +1,25 @@
-A collection of algotihms, links and paper and (naive) implementation
+Exact algorithms try all the possible solutions of the problem and then find out the best one.
 
-# VRP Algorithms
-## Still in progress
+## Branch and bound
 
-A collection of VRP algorithms.
+Branch and bound algorithm divides the problems into subproblems and solve each of them individually. Once a better solution is found, it replaces the current solution with the better one. 
 
-The following is the overview algrithms based on [NEO](http://neo.lcc.uma.es/vrp/solution-methods/).
+If a branch is found to have no solutions then its discarded.
 
-![Overview](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/Overview.png)
+## Branch and cut
 
-## Exact Algorithm
-* **Branch and bound**
-* **Branch and cut**
+Similar to branch and bound but with pruning. If we know the best feasible solution from a branch is no better than the current solution, then we prune the subproblem and continue to next one.
 
-## Heuristic Algorithm
-* **Constructive heuristic**
-  * Clarke and Wright savings algorithm
-  * Matching Based
-  * Multi-route Improvement Heuristic
-    * Thompson and Psaraftis
-    * Van Breedam
-    * Kinderwater and Savelsbergh
+## Resoureces
+* **M.L.Fisher**. [Optimal Solution of Vehicle Routing Problems Using Minimum K-trees](http://users.mai.liu.se/torla64/MAI0127/Fisher1994.pdf),  1994.
 
-* **2-Phase heuristic**
-  * Cluster-First, Route-Second Algorithms
-    * Fisher and Jakimar
-    * The Petal Algorithm
-    * The Sweep Algorithm
-    * Tailard
-  * Route-First, Cluster-Second Algorithms
+* **P. Toth, and D. Vigo**. [Models, relaxations and exact approaches for the capacitated vehicle routing problem](http://www-dimat.unipv.it/~gualandi/famo2conti/papers/routing_models.pdf). 2000.
 
-## Meta Heuristic Algorithm
-* Ant Algorithms
-* Constraint Programming
-* Deterministic Annealing
-* Genetic Algorithms
-* Simulated Annealing
-* Tabu Search
-  * Granular Tabu
-  * The Adaptative Memory Procedure
-  * Kelly and Xu
+* **P. Toth, and D. Vigo**. [Branch-and-bound algorithms for the capacitated VRP](https://www.jstor.org/stable/171544?seq=1#metadata_info_tab_contents). 2001.
+
+* **U. Blasum, and W. Hochstattler**. [Application of the Branch and Cut Method to the Vehicle Routing Problem](https://pdfs.semanticscholar.org/f2b6/7aab794949152bc73d3f606e4ad36f1d6390.pdf). 2002.
+
+* **R. Fukasawa1, J. Lysgaard2, M. Poggi de Aragao, M. Reis3, E. Uchoa4, and R. F. Werneck**. [Robust Branch-and-Cut-and-Price for the Capacitated Vehicle Routing Problem](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.90.394&rep=rep1&type=pdf) as well as this [slides](https://pdfs.semanticscholar.org/6b1a/e2c40e0e9eef4c367416053b78d2d7ebaf0d.pdf).
+
+* **AN Letchford, J Lysgaard and RW Eglese**. [A new branch-and-cut algorithm for the capacitated vehicle routing problem](https://www.lancaster.ac.uk/staff/letchfoa/articles/2007-covrp.pdf) and
+[Slides](https://symposia.cirrelt.ca/system/documents/000/000/112/Lysgaard_original.pdf?1441306917).

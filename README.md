@@ -10,8 +10,8 @@ The following is the overview algrithms based on [NEO](http://neo.lcc.uma.es/vrp
 ![Overview](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/Overview.png)
 
 ## Exact Algorithm
-* **Branch and bound**
-* **Branch and cut**
+* [Branch and bound](https://github.com/4342315yc/VRP-Algorithms/blob/master/Exact/README.md)
+* [Branch and cut](https://github.com/4342315yc/VRP-Algorithms/blob/master/Exact/README.md)
 
 ## Heuristic Algorithm
 * **Constructive heuristic**
@@ -40,3 +40,5 @@ The following is the overview algrithms based on [NEO](http://neo.lcc.uma.es/vrp
   * Granular Tabu
   * The Adaptative Memory Procedure
   * Kelly and Xu
+  
+## Deep Learning / Reinforcement Learning Approaches
