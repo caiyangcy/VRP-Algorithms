@@ -10,8 +10,8 @@ The following is the overview algrithms based on [NEO](http://neo.lcc.uma.es/vrp
 ![Overview](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/Overview.png)
 
 ## Exact Algorithm
-* [Branch and bound](https://github.com/4342315yc/VRP-Algorithms/blob/master/Exact/README.md)
-* [Branch and cut](https://github.com/4342315yc/VRP-Algorithms/blob/master/Exact/README.md)
+* [Branch and bound](https://github.com/4342315yc/VRP-Algorithms/tree/master/Exact)
+* [Branch and cut](https://github.com/4342315yc/VRP-Algorithms/tree/master/Exact)
 
 ## Heuristic Algorithm
 * **Constructive heuristic**
