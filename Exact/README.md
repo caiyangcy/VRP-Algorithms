@@ -21,5 +21,5 @@ Similar to branch and bound but with pruning. If we know the best feasible solut
 
 * **R. Fukasawa1, J. Lysgaard2, M. Poggi de Aragao, M. Reis3, E. Uchoa4, and R. F. Werneck**. [Robust Branch-and-Cut-and-Price for the Capacitated Vehicle Routing Problem](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.90.394&rep=rep1&type=pdf) as well as this [slides](https://pdfs.semanticscholar.org/6b1a/e2c40e0e9eef4c367416053b78d2d7ebaf0d.pdf).
 
-* **AN Letchford1, J Lysgaard2 and RW Eglese1**. [A new branch-and-cut algorithm for the capacitated vehicle routing problem](https://www.lancaster.ac.uk/staff/letchfoa/articles/2007-covrp.pdf) and
+* **AN Letchford, J Lysgaard and RW Eglese**. [A new branch-and-cut algorithm for the capacitated vehicle routing problem](https://www.lancaster.ac.uk/staff/letchfoa/articles/2007-covrp.pdf) and
 [Slides](https://symposia.cirrelt.ca/system/documents/000/000/112/Lysgaard_original.pdf?1441306917).
