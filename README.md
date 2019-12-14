@@ -5,7 +5,7 @@ A collection of algotihms, links and paper and (naive) implementation
 
 A collection of VRP algorithms.
 
-The following is the overview algrithms based on [NEO](http://neo.lcc.uma.es/vrp/solution-methods/).
+The following is the overview algorithms based on [NEO](http://neo.lcc.uma.es/vrp/solution-methods/).
 
 ![Overview](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/Overview.png)
 
