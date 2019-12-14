@@ -1,4 +1,4 @@
-A collection of algotihms, links and paper
+A collection of algotihms, links and paper and (naive) implementation
 
 # VRP Algorithms
 ## Still in progress
