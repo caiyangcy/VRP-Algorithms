@@ -1,4 +1,4 @@
-Exact algorithms try all the possible solutions to the problem and then find out the best one.
+Exact algorithms try all the possible solutions of the problem and then find out the best one.
 
 ## Branch and bound
 
