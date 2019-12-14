@@ -40,3 +40,5 @@ The following is the overview algrithms based on [NEO](http://neo.lcc.uma.es/vrp
   * Granular Tabu
   * The Adaptative Memory Procedure
   * Kelly and Xu
+  
+## Deep Learning / Reinforcement Learning Approaches
