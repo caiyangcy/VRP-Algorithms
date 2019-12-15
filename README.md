@@ -42,3 +42,8 @@ The following is the overview algorithms based on [NEO](http://neo.lcc.uma.es/vr
   * Kelly and Xu
   
 ## Deep Learning / Reinforcement Learning Approaches
+
+## Additional Resources
+VRP [Slides](http://www.discovery.dist.unige.it/didattica/LS/VRP.pdf) by **Massimo Paolucci**.
+
+SP [Slides](http://www2.imm.dtu.dk/courses/02735/sppintro.pdf) by **Jesper Larsen**, which may be useful for understanding the petal algorithm.
