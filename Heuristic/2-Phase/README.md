@@ -28,7 +28,27 @@ The following is two pictures taken from page 68 of the [slides](http://www.disc
 
 ## The Petal Algorithm
 
+**Massimo Paolucci**'s slides really did a good job on explaining the algorithms. So I'm going to refer to his slides here again.  
+
 
 ## Tailard
+
+## Location based heuristic
   
 # Route-First, Cluster-Second Algorithms
+
+## Beasley's Algorithm
+
+Phase 1: Routing
+
+By relaxing the constraint on capacity(infinite capacity), the problem is converted to a TSP.
+
+Phase 2: Clustering
+
+Cut the TSP solutions into sub-routes that satisfy the capacity constraints
+
+Here, again, an example taken from the slides.
+
+
+
+
