@@ -1,4 +1,7 @@
 ## Clarke and Wright savings algorithm
+
+**Paper** : G. Clarke and J.W.Wright [Scheduling of vehicles from a central depot to a number of delivery points](https://www.jstor.org/stable/167703?seq=1#metadata_info_tab_contents) 1964
+
 In this algorithm, *saving* is defined to be the distance saved by merging two seperate routes, i.e. ![](https://latex.codecogs.com/gif.latex?{s_{ij}=c_{i0}&plus;c_{0j}-c_{ij}}), where ![](https://latex.codecogs.com/gif.latex?c_{i0},&space;c_{0j},&space;c_{ij}) is defined as the distance between the depot with customer *i*, as the distance between the depot with customer *j*, and as the distance between customer *i* and customer *j*.
 
 By ordering the savings in a non-inceasing order and merging those routes with largest savings first, this algorithm could manage to find a near-optimal solution to the problem.
@@ -27,6 +30,18 @@ Step 2. Route Extension (Sequential version)
   * Stop when not route merge is feasible.
 
 ## Matching Based
+
+**Paper**: 
+Maybe a relevant paper on SBPP. A.Shafahi, Z. Wang, A. Haghani [A matching-based heuristic algorithm for school bus routing problems](https://arxiv.org/ftp/arxiv/papers/1807/1807.05311.pdf).
+
+K. Altinkemer, and B.Gavish. “Parallel Savings Based Heuristic for the Delivery Problem”. 1991.
+
+M. Desrochers, and T. W. Verhoog. “A Matching Based Savings Algorithm for the Vehicle Routing Problem”. 1989.
+
+An modification to standard savings algorithm, where savings is calculated by ![](https://latex.codecogs.com/gif.latex?{s_{ij}=t(S_{i})&plus;t(S_{j})-t(S_{i}&space;\bigcup&space;S_{j})}). Here, ![](https://latex.codecogs.com/gif.latex?S_{k}) is the set containing all vertices from route *k* and ![](https://latex.codecogs.com/gif.latex?tS_{k}) is the TSP solution to the set
+
+One variant involves approximating the TSP solution of each route instead of calculating the exact solution.
+
 ## Multi-route Improvement Heuristic
   * Thompson and Psaraftis
   * Van Breedam
