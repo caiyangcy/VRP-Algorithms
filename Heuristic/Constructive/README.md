@@ -77,6 +77,28 @@ String Mix (SM): The best move between SE and SR is selected.
 
 Define similar operations and perform experiments mostly in the context of the VRP with time windows (VRPTW is not the main focus in this repo).
 
+The following are images depicting the algorithm which were taken from their paper.
+
+*crossover*
+
+![corssover](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/crossover.png)
+
+*relocation*
+![relocation](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/relocation.png)
+
+Note that in the relocation, the customer is inserted between two consecutive vertices. However, the customers can be inserted to the two closest customer in the other route. The following is an example. This is proposed by Gendreau, Hertz & Laporte [1994]
+
+![relocation_ext](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/insertion_ext.png)
+
+*exchange*
+![exchange](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/exchange.png)
+
+And some other images:
+
+![more](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/more.png)
+
+
+**Paper: **
 
 G. A. P. Kinderwater and M. W. P. Savelsbergh. [Vehicle Routing: Handling Edge Exchanges](https://pdfs.semanticscholar.org/e0a5/55b01d71f5ebdc653cf68b3ab8fc136ba47b.pdf). 1997.
 
