@@ -29,6 +29,7 @@ The following is the overview algorithms based on [NEO](http://neo.lcc.uma.es/vr
     * The Sweep Algorithm
     * Tailard
   * Route-First, Cluster-Second Algorithms
+    * Beasley's Algorithm
 
 ## Meta Heuristic Algorithm
 * Ant Algorithms
