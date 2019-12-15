@@ -76,3 +76,10 @@ String Mix (SM): The best move between SE and SR is selected.
 ### Kinderwater and Savelsbergh
 
 Define similar operations and perform experiments mostly in the context of the VRP with time windows (VRPTW is not the main focus in this repo).
+
+
+G. A. P. Kinderwater and M. W. P. Savelsbergh. [Vehicle Routing: Handling Edge Exchanges](https://pdfs.semanticscholar.org/e0a5/55b01d71f5ebdc653cf68b3ab8fc136ba47b.pdf). 1997.
+
+P. M. Thompson and H. N. Psaraftis. [Cyclic Transfer Algorithms for the Multivehicle Routing and Scheduling Problems](https://www.jstor.org/stable/171656?seq=1#metadata_info_tab_contents). 1993.
+
+A. Van Breedam. An Analysis of the Behavior of Heuristics for the Vehicle Routing Problem for a Selection of Problems with Vehicle-Related. 1994.
