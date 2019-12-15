@@ -50,7 +50,9 @@ The author describes a general “b-cyclic, k-transfer” scheme in which a circ
 
 Example of 3-cyclic-2-transfer:
 
+![cyclic_demo](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/cyclic_transfer_demo.png)
 
+The cyclic transfer operator. The basic idea is to transfer simultaneously the customers denoted by white circles in cyclical manner between the routes. More precisely here customers a and c in route 1, f and j in route 2 and o and p in route 4 are simultaneously transferred to routes 2, 4, and 1 respectively and route 3 remains untouched.
 
 ### Van Breedam
 
@@ -58,12 +60,15 @@ Van Breedam classifies the improvement operations as *string cross*, *string exc
 
 String Cross (SC): Two strings (or chains) of vertices are exchanged by crossing two edges of two different routes.
 
+![SC_demo](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/van_0.png)
 
 String Exchange (SE): Two strings of at most k vertices are exchanged between two routes.
 
+![SE_demo](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/van_1.png)
 
 String Relocation (SR): A string of at most k vertices is moved from one route to another, typically with k = 1 or 2.
 
+![SR_demo](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/van_2.png)
 
 String Mix (SM): The best move between SE and SR is selected.
 
