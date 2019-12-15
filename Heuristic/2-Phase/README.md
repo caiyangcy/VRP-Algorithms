@@ -30,6 +30,9 @@ The following is two pictures taken from page 68 of the [slides](http://www.disc
 
 **Massimo Paolucci**'s slides really did a good job on explaining the algorithms. So I'm going to refer to his slides here again.  
 
+![petal_0](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/petal_demo_0.png)
+
+![petal_1](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/petal_demo_1.png)
 
 ## Tailard
 
@@ -49,6 +52,10 @@ Cut the TSP solutions into sub-routes that satisfy the capacity constraints
 
 Here, again, an example taken from the slides.
 
+![sweep_0](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/beasley_demo_0.png)
 
+![sweep_1](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/beasley_demo_1.png)
+
+![sweep_2](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/beasley_demo_2.png)
 
 
