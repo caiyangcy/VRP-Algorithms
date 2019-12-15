@@ -62,17 +62,23 @@ The cyclic transfer operator. The basic idea is to transfer simultaneously the c
 
 Van Breedam classifies the improvement operations as *string cross*, *string exchange*, *string relocation*, and *string mix*, which can all be viewed as special cases of 2-cyclic exchanges, and provides a computational analysis on a restricted number of test problems.
 
-String Cross (SC): Two strings (or chains) of vertices are exchanged by crossing two edges of two different routes.
+String Cross (SC): Two chains of customers are exchanged by exchanging the
+endpoints of two edges in two different routes.
 
 ![SC_demo](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/van_0.png)
 
-String Exchange (SE): Two strings of at most k vertices are exchanged between two routes.
-
-![SE_demo](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/van_1.png)
-
 String Relocation (SR): A string of at most k vertices is moved from one route to another, typically with k = 1 or 2.
 
+  - A chain of at most k customers is moved from one route to another
+  - Higher value of k may produce better results but the neighbourhood exploration time also increases
+
 ![SR_demo](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/van_2.png)
+
+String Exchange (SE): Two strings of at most k vertices are exchanged between two routes. k is usually small.
+
+SR and SC can viewed as a special case of SE. Assume there are two routes and *m* and *n* customers are taken from two routes respectively. SR is m > 0 and n = 0 while SC is m = n and the strings are at the end of routes. 
+
+![SE_demo](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/van_1.png)
 
 String Mix (SM): The best move between SE and SR is selected.
 
