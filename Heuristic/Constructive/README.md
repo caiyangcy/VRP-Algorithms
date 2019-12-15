@@ -43,6 +43,31 @@ An modification to standard savings algorithm, where savings is calculated by ![
 One variant involves approximating the TSP solution of each route instead of calculating the exact solution.
 
 ## Multi-route Improvement Heuristic
-  * Thompson and Psaraftis
-  * Van Breedam
-  * Kinderwater and Savelsbergh
+
+* Thompson and Psaraftis
+
+The author describes a general “b-cyclic, k-transfer” scheme in which a circular permutation of b routes is considered and k customers from each route are shifted to the next route of the cyclic permutation. The authors show that applying specific sequences of b-cyclic, k-transfer exchanges (with b = 2 or b variable, and k = 1 or 2) yields interesting results. Due to the complexity of the cyclic transfer neighborhood search, it is performed heuristically.
+
+Example of 3-cyclic-2-transfer:
+
+
+
+* Van Breedam
+
+Van Breedam classifies the improvement operations as *string cross*, *string exchange*, *string relocation*, and *string mix*, which can all be viewed as special cases of 2-cyclic exchanges, and provides a computational analysis on a restricted number of test problems.
+
+String Cross (SC): Two strings (or chains) of vertices are exchanged by crossing two edges of two different routes.
+
+
+String Exchange (SE): Two strings of at most k vertices are exchanged between two routes.
+
+
+String Relocation (SR): A string of at most k vertices is moved from one route to another, typically with k = 1 or 2.
+
+
+String Mix (SM): The best move between SE and SR is selected.
+
+
+* Kinderwater and Savelsbergh
+
+Define similar operations and perform experiments mostly in the context of the VRP with time windows (VRPTW is not the main focus in this repo).
