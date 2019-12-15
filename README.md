@@ -9,6 +9,10 @@ The following is the overview algorithms based on [NEO](http://neo.lcc.uma.es/vr
 
 ![Overview](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/Overview.png)
 
+## Variants
+* CVRP
+* VRPTW
+
 ## Exact Algorithm
 * [Branch and bound](https://github.com/4342315yc/VRP-Algorithms/tree/master/Exact)
 * [Branch and cut](https://github.com/4342315yc/VRP-Algorithms/tree/master/Exact)
