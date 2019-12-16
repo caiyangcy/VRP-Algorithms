@@ -8,7 +8,7 @@ Wikipedia provides a elegant formulation of AS algorithm in *Algorithm and formu
 
 The probabiliy of selecting an edge is calculated as following: 
 
-![ant]()
+![ant](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/AS_prob.png)
 
 Where
 
@@ -28,7 +28,11 @@ Or according to Wikipedia:
 
 where ![3](https://latex.codecogs.com/png.latex?\inline&space;\dpi{110}&space;\fn_cm&space;\rho) in the first equation is the *trail persistance* and ![4](https://latex.codecogs.com/png.latex?\inline&space;\dpi{110}&space;\fn_cm&space;\rho) in the second equation is the *pheromone evaporation coefficient*.
 
-And ![](), where **Q** is a constant.
+And 
+
+![4](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/AS_delta.png), 
+
+where **Q** is a constant.
 
 # Constraint Programming
 
