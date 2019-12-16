@@ -18,6 +18,9 @@ The following is the overview algorithms based on [NEO](http://neo.lcc.uma.es/vr
 * [Branch and cut](https://github.com/4342315yc/VRP-Algorithms/tree/master/Exact)
 
 ## Heuristic Algorithm
+
+Note that the following hyperlinks in sub-sections may not work
+
 * **[Constructive heuristic](https://github.com/4342315yc/VRP-Algorithms/tree/master/Heuristic/Constructive)**
   * [Clarke and Wright savings algorithm](https://github.com/4342315yc/VRP-Algorithms/tree/master/Heuristic/Constructive/#clarke-and-wright-savings-algorithm)
   * [Matching Based](https://github.com/4342315yc/VRP-Algorithms/tree/master/Heuristic/Constructive/#matching-based)
@@ -27,13 +30,13 @@ The following is the overview algorithms based on [NEO](http://neo.lcc.uma.es/vr
     * [Kinderwater and Savelsbergh](https://github.com/4342315yc/VRP-Algorithms/tree/master/Heuristic/Constructive/kinderwater-and-savesbergh)
 
 * **[2-Phase heuristic](https://github.com/4342315yc/VRP-Algorithms/tree/master/Heuristic/2-Phase)**
-  * Cluster-First, Route-Second Algorithms
-    * Fisher and Jakimar
-    * The Petal Algorithm
-    * The Sweep Algorithm
+  * [Cluster-First, Route-Second Algorithms](https://github.com/4342315yc/VRP-Algorithms/tree/master/Heuristic/2-Phase/#cluster-first-route-second-algorithms)
+    * [Fisher and Jakimar](https://github.com/4342315yc/VRP-Algorithms/tree/master/Heuristic/2-Phase/#fisher-and-jakimar)
+    * [The Petal Algorithm](https://github.com/4342315yc/VRP-Algorithms/tree/master/Heuristic/2-Phase/#the-petal-algorithm)
+    * [The Sweep Algorithm](https://github.com/4342315yc/VRP-Algorithms/tree/master/Heuristic/2-Phase/#the-sweep-algorithm)
     * Tailard
-  * Route-First, Cluster-Second Algorithms
-    * Beasley's Algorithm
+  * [Route-First, Cluster-Second Algorithms](https://github.com/4342315yc/VRP-Algorithms/tree/master/Heuristic/2-Phase/#route-first-cluster-second-algorithms)
+    * [Beasley's Algorithm](https://github.com/4342315yc/VRP-Algorithms/tree/master/Heuristic/2-Phase/#beasleys-algorithm)
 
 ## Meta Heuristic Algorithm
 * Ant Algorithms
