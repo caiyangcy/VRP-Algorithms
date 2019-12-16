@@ -8,7 +8,7 @@ The vehicle has a limited capacity.
 
 ## VRP with Time Window(VRPTW)
 
-Each customer is only available in a specific duration.
+Each customer is only available in a specific duration. Meanwhile there is also a restriction on the time intervel of depot which is called the scheduling horizon and the delivery must start and end within this time interval.
 
 ## VRP with Pick-Up and Delivering(VRPPD)
 There is a chance that some customers return the commodities.
