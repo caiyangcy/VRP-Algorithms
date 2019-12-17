@@ -1,4 +1,4 @@
-A lot of the following are taken from [NEO](http://neo.lcc.uma.es/vrp/solution-methods/)
+A lot of the following are taken from [NEO](http://neo.lcc.uma.es/vrp/solution-methods/) and Wikipedia.
 
 # Ant Algorithms
 
@@ -47,6 +47,40 @@ At iteration t of a threshold accepting algorithm, solution ![10](https://latex.
 
 # Genetic Algorithms
 
+
+Inspired by the natural selection, genetic algorithm is used a meta-heeuritic algorithm being used a lot to generate high-quality solutions based on bio-inspired operations such as mutation, crossover and selection.
+
+The evolution usually starts from a population of randomly generated individuals, and is an iterative process, with the population in each iteration called a generation. In each generation, the *fitness* of every individual in the population is evaluated; the *fitness* is usually the value of the objective function in the optimization problem being solved. 
+
+A picture illustrating of GA. (solutions are aften represented as a string of bits, which are problem specific):
+
+![](https://miro.medium.com/max/1600/1*BYDJpa6M2rzWNSurvspf8Q.png)
+
+In general, there are some common phases for GA:
+
+1. **Initialization**. A *papulation* in GA refers to a set of candidate solutions(called *individual*, encoded as *chromosomes*) and the size of it is depending on the problem. The initial population is generated randomly, allowing the entire range of possible solutions (the search space). Occasionally, the solutions may be "seeded" in areas where optimal solutions are likely to be found.
+
+2. **Selection**. The process consist of randomly choosing two parent individuals from the population for mating purposes. The probability of selecting a population member is generally proportional to its fitness in order to emphasize genetic quality while maintaining genetic diversity. (Fitness can also be considered as a measure of profit, utility or goodness to be maximized while exploring the solution space.). Diversity is ensured by selecting parents with less fitness value.
+
+3. **Genetic operators** This process refers to generate a new generation through genetic operators: crossover(AKA recombination) and mutation.
+
+    * **Crossover**. The process makes use of genes of selected parents to produce offspring that will form the next generation. Although reproduction methods that are based on the use of two parents are more "biology inspired", some research suggests that more than two "parents" generate higher quality chromosomes.
+  
+    * **Mutation**. It consists of randomly modifying some gene(s) of a single individual at a time to further explore the solution space and ensure, or preserve, genetic diversity. The occurrence of mutation is generally associated with a low probability.
+
+**Heuristic**. In addition to the main operators above, other heuristics may be employed to make the calculation faster or more robust. The speciation heuristic penalizes crossover between candidate solutions that are too similar; this encourages population diversity and helps prevent premature convergence to a less optimal solution.
+
+There are usually multiple stopping ctriteria such as the number of iterations is reached, the whole population converges to a homogeneous system with similar individuals or an optimal solution is found.
+
+For solving VRP with GAs, it is usual to represent each individual by just one chromosome, which is a chain of integers, each of them representing a customer or a vehicle. So that each vehicle identifier represents in the chromosome a separator between two different routes, and a string of customer identifiers represents the sequence of deliveries that must cover a vehicle during its route. In the figure below we can see a representation of a possible solution for VRP with 10 customers and 4 vehicles. Each route begins and end at the depot (it will be assigned the number 0). If we find in a solution two vehicle identifiers not separated by any customer identifier, we will understand that the route is empty and, therefore, it will not be necessary to use all the vehicles available.
+
+![](https://latex.codecogs.com/png.latex?\inline&space;\dpi{120}&space;\fn_cm&space;\large&space;\underbrace{4-5-2}_{route1}-11-\underbrace{10-3-1}_{route2}-13-\underbrace{7-8-9}_{route3}-12-\underbrace{6}_{route4})
+
+A typical fitness function used for solving VRP with GA is ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;f_{eval}(x)&space;=&space;f_{max}-f(x)) where ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;{f(x)&space;=&space;totaldistance(x)&space;&plus;&space;\lambda&space;overcapacity(x)&space;&plus;&space;\mu&space;overtime(x)}) is the *unfitness* value.
+
+The **overcapacity** and **overtime** functions are acting as a penaly term and they measured the amount of capacity and time that is over the maximum. If no violations on the capacity and time, the function will simply return the total distance and hence the fitness value is better.
+
+There are still other functions can be used as the fitness value function such as the reciprocal of the total travelled distance
 
 # Simulated Annealing
 
