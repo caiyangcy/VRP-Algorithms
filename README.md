@@ -60,3 +60,7 @@ Note that the following hyperlinks in sub-sections may not work
 VRP [Slides](http://www.discovery.dist.unige.it/didattica/LS/VRP.pdf) by **Massimo Paolucci**.
 
 SP [Slides](http://www2.imm.dtu.dk/courses/02735/sppintro.pdf) by **Jesper Larsen**, which may be useful for understanding the petal algorithm.
+
+Intro to reinforcement learning: [Lil's log](https://lilianweng.github.io/lil-log/tag/reinforcement-learning)
+
+pgrouting [Github repo](https://github.com/pgRouting/pgrouting/wiki/VRP-Algorithms)
