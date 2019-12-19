@@ -56,6 +56,8 @@ Note that the following hyperlinks in sub-sections may not work
   
 ## Deep Learning / Reinforcement Learning Approaches
 
+NIPS paper [Reinforcement Learning for Solving the Vehicle Routing Problem](https://arxiv.org/abs/1802.04240)
+
 ## Additional Resources
 VRP [Slides](http://www.discovery.dist.unige.it/didattica/LS/VRP.pdf) by **Massimo Paolucci**.
 
@@ -63,4 +65,8 @@ SP [Slides](http://www2.imm.dtu.dk/courses/02735/sppintro.pdf) by **Jesper Larse
 
 Intro to reinforcement learning: [Lil's log](https://lilianweng.github.io/lil-log/tag/reinforcement-learning)
 
+David Silver's reinforcement learning [course](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html) in UCL 
+
 pgrouting [Github repo](https://github.com/pgRouting/pgrouting/wiki/VRP-Algorithms)
+
+
