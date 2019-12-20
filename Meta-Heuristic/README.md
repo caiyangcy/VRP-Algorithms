@@ -38,6 +38,29 @@ where **Q** is a constant.
 
 # Constraint Programming
 
+[Python library for CP](https://pypi.org/project/python-constraint/). And [Wikipedia](https://en.wikipedia.org/wiki/Constraint_programming#Constraint_programming_libraries_for_general-purpose_programming_languages) provides a list of languages that support CP.
+
+Problems are expressed in terms of variables, domains for those variables and constraints between the variables. The problems are then solved using complete search techniques such as depth-first search (for satisfaction) and branch and bound (for optimisation).
+
+The typical methods for CP are *chronological backtracking* and *constraint propagation*. 
+
+*Backtracking* is a general algorithm for finding all (or some) solutions to some computational problems, notably constraint satisfaction problems, that incrementally builds candidates to the solutions, and abandons a candidate ("backtracks") as soon as it determines that the candidate cannot possibly be completed to a valid solution. 
+
+*Local consistency* conditions are properties of constraint satisfaction problems related to the consistency of subsets of variables or constraints. They can be used to reduce the search space and make the problem easier to solve. Various kinds of local consistency conditions are leveraged, including *node consistency*, *arc consistency*, and *path consistency*. Every *local consistency* condition can be enforced by a transformation that changes the problem without changing its solutions. Such a transformation is called *constraint propagation*.
+
+* Core Constraints
+
+1. Time
+
+2. Capacity
+
+* Side constraints
+
+Solutions to CP problems are usually found using complete methods such as depth-first search and branch and bound. However, for routing problems of practical size, complete search methods cannot produce solutions in a short and reliable time period. By contrast, iterative improvement methods have proved very successful in this regard. Iterative improvement methods operate by changing small parts of the solution, for instance moving a visit from one route to another. This type of operation involves retracting previous decisions and making new ones. In contrast to depth-first search, retraction can be done in any order, not simply in the opposite order the decisions were made. In general the overhead of implementing this type of non-chronological retraction mechanism in CP frameworks is very high.
+
+To overcome this problem, the CP system is only used to check the validity of solutions and determine the values of constrained variables, not to search for solutions. The search is performed by an iterative improvement procedure. When the procedure needs to check the validity of a potential solution, it is handed to the CP system. As a part of checking, constraint propagation using all constraints still takes place. This adds value to the constraint check, as the iterative improvement method can then take advantage of the reduced domains to speed up search by performing fast legality checks.
+
+If the propagation mechanism removes all values from any variable, then there cannot be a solution in this subtree and the search backtracks making a different decision at the backtrack point.
 
 # Deterministic Annealing
 
@@ -46,7 +69,6 @@ Deterministic Annealing operates in a way that is similar to SA, except that a d
 At iteration t of a threshold accepting algorithm, solution ![10](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;(x_{i+1})) is accepted if ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;f(x_{i&plus;1})&space;\le&space;f(x_{i})&plus;&space;\theta_{1}) here ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\theta_1) is a user controlled parameter. In record-to-record travel a record is the best solution ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;x^{*}) encountered during the search. At iteration t, solution ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;x_{i+1}) is accepted if ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;f(x_{i&plus;1})&space;\le&space;\theta_{2}f(x_{i})), where ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\theta_2) is a user controlled parameter slightly larger than ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\theta_1).
 
 # Genetic Algorithms
-
 
 Inspired by the natural selection, genetic algorithm is used a meta-heeuritic algorithm being used a lot to generate high-quality solutions based on bio-inspired operations such as mutation, crossover and selection.
 
