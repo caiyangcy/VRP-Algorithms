@@ -148,6 +148,7 @@ The authors proposed a procedure capable of examining all potential exchanges in
 
 An adaptative memory is a pool of good solutions that is dynamically updated throughout the search process. Periodically, some elements of these solutions are extracted from the pool and combined differently to produce new good solutions. When selecting these routes, care must be taken to avoid including the same customer twice in a solution. This restriction means that the selection process will often terminate with a partial solution that will have to be completed using a construction heuristic. In the example depicted in the figure below, extracting routes A, D and H from a memory of two solutions results in a partial solution. Rochat and Taillard have shown that the application of an adaptative memory procedure can enhance a search strategy. This has enabled them to obtain two new best solutions on the 14 standard VRP benchmark instances.
 
+![](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/Adaptative_memory_demo.png)
 
 ## Kelly and Xu
 
