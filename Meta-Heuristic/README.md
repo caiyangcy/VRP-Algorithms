@@ -128,8 +128,27 @@ Also an example of annealing on CVRP (I forgot which paper this image was taken 
 
 # Tabu Search
 
+Tabu search is a metaheuristic search method employing local search methods used for mathematical optimization.
+
+Local (neighborhood) searches take a potential solution to a problem and check its immediate neighbors (that is, solutions that are similar except for very few minor details) in the hope of finding an improved solution. Local search methods have a tendency to become stuck in suboptimal regions or on plateaus where many solutions are equally fit.
+
+Tabu search enhances the performance of local search by relaxing its basic rule. First, at each step worsening moves can be accepted if no improving move is available (like when the search is stuck at a strict local minimum). In addition, prohibitions (henceforth the term tabu) are introduced to discourage the search from coming back to previously-visited solutions.
+
+The implementation of tabu search uses memory structures that describe the visited solutions or user-provided sets of rules. If a potential solution has been previously visited within a certain short-term period or if it has violated a rule, it is marked as "tabu" (forbidden) so that the algorithm does not consider that possibility repeatedly.
+
+The initial solution is typically created with some cheapest insertion heuristic. After creating an initial solution, an attempt is made to improve it using local search with one or more neighborhood structures and a best-accept strategy. Most of the neighborhoods used are well known and were previously introduced in the context of various construction and improvement heuristics.
+
 ## Granular Tabu
+
+It turns out the longer the distance is, the less likely it is to belong to the optimal solution. Hence by defining *granularity threshold*, several unpromising solutions will never be considered by the search process. The authors proposed ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;\nu&space;=&space;\beta&space;\bar{c}), where ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;\beta) is a sparsification parametetr typically chosen from interval [1.0, 2.0] (the percentage of remaining edges in the graph tends to be in the 10% – 20%) and ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;\bar{c}) is the averaged edge length of a solution obtained by a fast heuristic. The value of ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;\beta) is dynamically adjusted whenever the incumbent has not improved for a set number of iterations, and periodically decreased to its initial value. Neighbor solutions are obtained by performing a limited number of edge exchanges within the same route or between two routes.
+
+The authors proposed a procedure capable of examining all potential exchanges in ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;O(|E(\nu)|)), where ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;E(\nu)&space;=&space;\{(i,j)&space;\in&space;E&space;:&space;c_{ij}&space;\le&space;\nu\}&space;\bigcup&space;I) and ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;I) is the set od important edges such as the inevitable edges between customers and deopts or the edged that are very likely to show up in the best edges.
 
 ## The Adaptative Memory Procedure
 
+An adaptative memory is a pool of good solutions that is dynamically updated throughout the search process. Periodically, some elements of these solutions are extracted from the pool and combined differently to produce new good solutions. When selecting these routes, care must be taken to avoid including the same customer twice in a solution. This restriction means that the selection process will often terminate with a partial solution that will have to be completed using a construction heuristic. In the example depicted in the figure below, extracting routes A, D and H from a memory of two solutions results in a partial solution. Rochat and Taillard have shown that the application of an adaptative memory procedure can enhance a search strategy. This has enabled them to obtain two new best solutions on the 14 standard VRP benchmark instances.
+
+
 ## Kelly and Xu
+
+In this case, [Kelly and Xu 1996] considered swaps of vertices between two routes, a global repositioning of some vertices into other routes, and local routes improvements. The global repositioning strategy solves a network flow model to optimally relocate given numbers of vertices into different routes. Approximations are developed to compute the ejection and insertion costs, taking vehicle capacity into account. Route optimizations are performed by means of 3-opt exchanges. The algorithm is governed by several parameters which are dynamically adjusted through the search. A pool of best solutions is memorized and periodically used to reinitiate the search with new parameter values. Overall, this algorithm produced several best known solutions on benchmark instances, but it is fair to say that it is not as effective as some other TS implementations. It tends to require a meaty computational effort and properly tuning its many parameters can be problematic.
