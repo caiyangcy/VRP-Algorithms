@@ -8,24 +8,36 @@ import numpy as np
 import matplotlib.pyplot as plt
 import class_info as Exact
 from matplotlib.animation import FuncAnimation
+from matplotlib import animation
 
 
     
-def plot_solutions():
-    None
+def plot_solutions(depot, customers):
+    plt.scatter(depot[:,0], depot[:,1], s=60, c='r', label='depot')
+    plt.scatter(customers[:,0], customers[:,1], s=50, label='customers')
     
-def plot_progress():
-    None
+    starting_edge_x = np.concatenate((depot[:,0], np.array([customers[0, 0]])), axis=0)
+    starting_edge_y = np.concatenate((depot[:,1], np.array([customers[0, 1]])), axis=0)
+    plt.plot(starting_edge_x, starting_edge_y, c='#FF5733')
     
-def demo(ps=True, pp=False):
+    for idx in range(1, len(customers)):
+        prev_customer = customers[idx-1]
+        curr_customer = customers[idx]
+        
+        x_coord = np.concatenate((np.array([prev_customer[0]]), np.array([curr_customer[0]])), axis=0)
+        y_coord = np.concatenate((np.array([prev_customer[1]]), np.array([curr_customer[1]])), axis=0)
+        
+        plt.plot(x_coord, y_coord, c='#FF5733')
     
-    if ps:
-        print()
-#        plot_solutions(solution)
+    ending_edge_x = np.concatenate((depot[:,0], np.array([customers[-1, 0]])), axis=0)
+    ending_edge_y = np.concatenate((depot[:,1], np.array([customers[-1, 1]])), axis=0)
+    plt.plot(ending_edge_x, ending_edge_y, c='#FF5733')
+    plt.legend()
+    plt.show()
     
-    None
+
+def demo(ps=True):
     
-if __name__ == '__main__':
     
     depot = np.array([[0,0]])
 #    customers = np.array([[1,1], [1,-1], [-1,1], [-1,-1]])
@@ -45,4 +57,11 @@ if __name__ == '__main__':
     print('\ncustomer visiting order:\n ', customer_order)
     print('\nsolution: ', solution)
     print('\nshortest_distance: ', shortest_distance)
+    
+    if ps:
+        plot_solutions(depot, customer_order)
+
+if __name__ == '__main__':
+    
+    demo()
     
