@@ -12,7 +12,7 @@ class Customer:
 
 class Vehicle:
     '''
-    current;y, number of vehicles is limited to 1
+    current number of vehicles is limited to 1
     '''
     capacity, num = 0, 0
     
