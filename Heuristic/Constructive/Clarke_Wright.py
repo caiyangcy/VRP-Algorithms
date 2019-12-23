@@ -14,8 +14,6 @@ class Vehicle:
         self.capacity = capacity
         self.num = num
         
-        
-        
 class Clark_Wright:
     # depot and customers should be a 2d array
     depot, customers, demand = 0, 0, 0
@@ -39,20 +37,18 @@ class Clark_Wright:
             
     def _init_saving_matrix(self):
         # The first row is depot
-        mat_size = self.customers.shape[0]+self.depot.shape[0]
+        mat_size = self.customers.shape[0] #+self.depot.shape[0]
         CWSM = np.zeros((mat_size, mat_size))
         DM = self.DM
         from_node_idx = 0
         while from_node_idx != mat_size:
             for i in range(from_node_idx+1, mat_size):
-                CWSM[i,from_node_idx] = DM[0, from_node_idx] + DM[i, 0] - DM[i, from_node_idx]
+                CWSM[i,from_node_idx] = DM[0, from_node_idx+1] + DM[i+1, 0] - DM[i+1, from_node_idx+1]
             from_node_idx += 1
 
         self.CWSM = CWSM
     
-    def _recal_SM(self):
-        None
-        
+
     def _parallel_solve(self):
         SM = self.CWSM.copy()
 
@@ -90,10 +86,10 @@ class Clark_Wright:
         curr_solution = np.array([])
         while np.amax(SM) > 0:
             
+            overcapacity = False
+            
             if curr_solution.size > 0: # There are endpoints in the array
-#                print(curr_solution[0])
-#                print(curr_solution[1])
-                sub_SM = SM[[int(curr_solution[0]), int(curr_solution[-1])],:]
+                sub_SM = SM[:,[int(curr_solution[0]), int(curr_solution[-1])]]
                 max_savings = np.amax(sub_SM)     
                 _temp_is_holder = np.where(sub_SM == np.amax(sub_SM))
                 savings_idx = (np.array([_temp_is_holder[0][0]]), np.array([_temp_is_holder[1][0]]))
@@ -105,22 +101,51 @@ class Clark_Wright:
                 
             # max_savings_idx is a tuple
             max_savings_idx = list(zip(savings_idx[0], savings_idx[1]))[0] # Pick up the first index
-            d1, d2 = self.demand[max_savings_idx[0]-1], self.demand[max_savings_idx[1]-1]
             
-            if (curr_demand + d1 + d2 < self.vehicle.capacity) and (max_savings > 0):
-                curr_demand += d1+d2 
-                # If two customers are already part of a route, 
-                # then any other routes should never include them
-                # -inf is used to prevent that
+            new_demand = 0
+            for idx in max_savings_idx:
+                if idx not in curr_solution:
+                    new_demand += self.demand[idx] 
+                    
+#            print('current demand: ', curr_demand)        
+#            print('new demand: ', new_demand)
+#            print('max_saving_idx: ', max_savings_idx)
+            
+            max_savings_idx = list(max_savings_idx)
+            max_savings_idx.sort()
                 
-                curr_solution = np.append(curr_solution, np.array(max_savings_idx))
+            if (curr_demand + new_demand <= self.vehicle.capacity) and (max_savings > 0):
+                curr_demand += new_demand 
+               
+                curr_solution = np.unique(np.append(curr_solution, np.array(max_savings_idx)))
+                
             else:
-                solution_set.append(curr_solution)
+                overcapacity = True
+                if curr_solution.size > 0:
+                    solution_set.append(curr_solution)
                 curr_solution = np.array([])
                 curr_demand = 0
+
+            for idx in range(1, len(max_savings_idx)):
+                SM[max_savings_idx[idx], max_savings_idx[idx-1]] = -np.inf
                 
-            SM[:, max_savings_idx] = -np.inf     
+            if curr_solution.size > 2:
+#                print('if clause: ', curr_solution)
+#                print('middle point: ', curr_solution[1:curr_solution.size-1])
+                SM[:, [curr_solution[1:curr_solution.size-1].astype(int)]] = -np.inf     
+        
+        if not overcapacity:
+            solution_set.append(curr_solution)
             
+        for c in range(len(self.customers)):
+            is_in = False
+            for s in solution_set:
+                if c in s:
+                    is_in = True
+                    break
+            if not is_in:
+                solution_set.append(np.array(int(c)))
+                
         solution_set = [i.astype(int) for i in solution_set]
         return np.array(solution_set)
                 
@@ -135,23 +160,21 @@ class Clark_Wright:
         
         data = np.concatenate((depot, customers), axis=0)
         self.DM = distance_matrix(data, data)
-        
+        print('Distance Matrix: \n', self.DM)
         self._init_saving_matrix()
-        print('Savings Matrix: \n', self.CWSM)
+        print('\nInitial Savings Matrix: \n', self.CWSM)
         
         solutions = []
         if solver == 'parallel':
-            print('Parallel solver set')
             solutions = self._parallel_solve()
         elif solver == 'sequential':
-            print('Sequential solver set')
             solutions = self._sequential_solve()
         else:
             raise Exception("No solver found")
             
         
         end_time = time.time()
-        print('\nFinished solving, with total time %s mins ' % ((end_time - start_time)/60))
+        print('\nFinished solving, with total time %s mins \n' % ((end_time - start_time)/60))
         
         
         return solutions

@@ -27,10 +27,10 @@ def demo(ps=True, solver='sequential'):
     cvrp.fit(vehicle)
     
     solution = cvrp.solve()
-    
-#    print('\ncustomer visiting order:\n ', customer_order)
-    print('\nsolution: ', solution)
-#    print('\nshortest_distance: ', shortest_distance)
+    print(solution)
+    for idx in range(len(solution)):
+        print('visiting order {}: '.format(idx), solution[idx])
+   
     
 
 if __name__ == '__main__':
