@@ -14,7 +14,7 @@ class Vehicle:
         self.capacity = capacity
         self.num = num
         
-class Clark_Wright:
+class Clark_Wright_Sequential:
     # depot and customers should be a 2d array
     depot, customers, demand = 0, 0, 0
     split_delivery = False
@@ -47,37 +47,6 @@ class Clark_Wright:
             from_node_idx += 1
 
         self.CWSM = CWSM
-    
-
-    def _parallel_solve(self):
-        SM = self.CWSM.copy()
-
-        solution_set = [[]]*self.customers.shape[0]
-        endpoint_check = np.ones((self.customers.shape[0], ))
-        routes_capacity = self.demand.copy()
-        
-        while np.amax(SM) > 0:
-            max_savings = np.where(SM == np.amax(SM))
-            max_savings_idx = list(zip(max_savings[0], max_savings[1]))[0] # Pick up the first index
-            
-            is_endpoint = endpoint_check[max_savings_idx[0]] and endpoint_check[max_savings_idx[1]]
-            
-            if (sum(routes_capacity[max_savings_idx]) < self.vehicle.capacity) and is_endpoint:
-                smaller = min(max_savings_idx)
-                larger = max(max_savings_idx)
-                
-                routes_capacity[smaller] += routes_capacity[larger]
-                routes_capacity.remove(routes_capacity[larger])
-                
-                endpoint_check[solution_set[smaller][1:]] = 0
-                endpoint_check[solution_set[larger][:-1]] = 0
-                
-                solution_set[smaller] += solution_set[larger]
-                solution_set.remove(solution_set[larger])
-            
-            SM[:, max_savings_idx] = -np.inf 
-        
-        return solution_set
         
     def _sequential_solve(self):
         SM = self.CWSM.copy()
@@ -144,12 +113,13 @@ class Clark_Wright:
                     is_in = True
                     break
             if not is_in:
-                solution_set.append(np.array(int(c)))
+                solution_set.append(np.array([int(c)]))
                 
         solution_set = [i.astype(int) for i in solution_set]
         return np.array(solution_set)
-                
-    def solve(self, solver='sequential'):
+    
+            
+    def solve(self):
         '''
         solver: parallel or sequential
         '''
@@ -164,18 +134,10 @@ class Clark_Wright:
         self._init_saving_matrix()
         print('\nInitial Savings Matrix: \n', self.CWSM)
         
-        solutions = []
-        if solver == 'parallel':
-            solutions = self._parallel_solve()
-        elif solver == 'sequential':
-            solutions = self._sequential_solve()
-        else:
-            raise Exception("No solver found")
-            
+        solutions = self._sequential_solve()
         
         end_time = time.time()
         print('\nFinished solving, with total time %s mins \n' % ((end_time - start_time)/60))
-        
         
         return solutions
         
