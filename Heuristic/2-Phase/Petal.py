@@ -52,7 +52,7 @@ class Petal:
         
         for i in range(work_plans.shape[1]):
             work_plans[:,i][init_start:init_start+i+1] = 1
-            work_plan_cost[i] = self.demand[init_start:i+1].sum()
+            work_plan_cost[i] = self.demand[init_start:init_start+i+1].sum()
 
         return work_plans, work_plan_cost
     
@@ -63,13 +63,15 @@ class Petal:
             assign_init = np.concatenate((assign_init, plan), axis=1)
             cost_init = np.concatenate((cost_init, cost))
         
-        print('Assignment matrix:\n ', assign_init)
+        print('\nAssignment matrix:\n ', assign_init)
+        print('\nCost Array:\n ', cost_init)
         self.ASSIGN_MATRIX = assign_init
         self.COST_MATRIX = cost_init
         
     def _SSP_solver(self):
         '''
         This function is simply based on scipy 
+        https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html
         '''
         c = self.COST_MATRIX.reshape(-1, )
         A_eq = self.ASSIGN_MATRIX
@@ -77,7 +79,7 @@ class Petal:
         
         bounds = (0, 1)
         
-        res = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds)
+        res = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='revised simplex')
         print('\nresult: ', res)
         return res
     
