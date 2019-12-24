@@ -47,11 +47,9 @@ def demo_Petal():
     
     cvrp.fit(vehicle)
     
-    solution = cvrp.solve()
+    cvrp.solve()
 
-    for idx in range(len(solution)):
-        print('visiting order {} : {}'.format(idx, solution[idx]))
         
 if __name__ == "__main__":
-#    demo_Sweep()
+#    demo_Sweep()s
     demo_Petal()

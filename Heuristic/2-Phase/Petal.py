@@ -34,31 +34,36 @@ class Petal:
             self.vehicle = None
         
     def _assign_matrix(self, starting_plan):
-        
         init_start = starting_plan
         curr_demand = self.demand[starting_plan]
+        
         while curr_demand <= self.vehicle.capacity and starting_plan < self.demand.shape[0]:
-            starting_plan += 1
-            curr_demand += self.demand[starting_plan]
-        starting_plan -= 1
-        curr_demand -= self.demand[starting_plan]
+            if starting_plan < self.demand.shape[0] - 1:
+                starting_plan += 1
+                curr_demand += self.demand[starting_plan] 
+            else:
+                break
+        if curr_demand > self.vehicle.capacity: # The reason for the loop to stop is overcapacity
+            curr_demand -= self.demand[starting_plan]
+            starting_plan -= 1
         
         work_plans = np.zeros((self.customers.shape[0], starting_plan-init_start+1))
         work_plan_cost = np.zeros((starting_plan-init_start+1, ))
         
         for i in range(work_plans.shape[1]):
-            work_plans[:,i][:i+1] = 1
+            work_plans[:,i][init_start:init_start+i+1] = 1
             work_plan_cost[i] = self.demand[init_start:i+1].sum()
-        
+
         return work_plans, work_plan_cost
     
-    def _create_AM(self):
+    def _create_AM(self): # Assignment matrix creation
         assign_init, cost_init = self._assign_matrix(0)
         for i in range(1, self.demand.shape[0]):
             plan, cost = self._assign_matrix(i)
             assign_init = np.concatenate((assign_init, plan), axis=1)
             cost_init = np.concatenate((cost_init, cost))
         
+        print('Assignment matrix:\n ', assign_init)
         self.ASSIGN_MATRIX = assign_init
         self.COST_MATRIX = cost_init
         
@@ -68,20 +73,21 @@ class Petal:
         '''
         c = self.COST_MATRIX.reshape(-1, )
         A_eq = self.ASSIGN_MATRIX
-        b_eq = np.ones((c.shape[0], ))
+        b_eq = np.ones((A_eq.shape[0], ))
         
         bounds = (0, 1)
         
         res = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds)
+        print('\nresult: ', res)
         return res
     
     def solve(self):
         
         start_time = time.time()
-        
-        res = self._SSP_solver()
+        self._create_AM()
+        _ = self._SSP_solver()
         
         end_time = time.time()
         print('\nFinished solving, with total time %s mins \n' % ((end_time - start_time)/60))    
     
-        return res.x
+#        return res.x
