@@ -1,9 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Dec 23 23:51:20 2019
+# https://github.com/pjmattingly/ant-colony-optimization
 
-@author: Cai
-"""
 import Ant_Colony
 import numpy as np
 
