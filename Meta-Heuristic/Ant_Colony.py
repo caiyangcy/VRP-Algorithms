@@ -18,25 +18,35 @@ class Ant_Colony:
             beta: relative influence of visibility
             gamma: relative influence of capacity ratio. This parameter is problem-specific
             '''
+            Thread.__init__(self)
             self.pheromone_map = pheromone_map            
             self.start_node= start_node
             self.possible_locations = possible_locations
             self.demand = demand           
             self.decay = decay
             self.alpha = alpha
-            self.beta = beta            
+            self.beta = beta   
+            self.gamma = gamma 
             self.distance_travelled = 0
             self.route = []
             self.tour_complete = False
-            self.location = start_node
-            self.remaining_capacity, self.capacity = capacity, capacity
+            
+
+            self.remaining_capacity = capacity
+            self.capacity = capacity
             self.distance_callback = distance_callback
             self.first_pass = first_pass
+        
+            self._update_route(start_node)
+            self._update_possible_locations()
+            
             
         def run(self):
             while self.possible_locations:
                 next_location = self._pick_move()
-                self._update_route_n_distance(next_location)
+                self._update_distance(next_location)
+                self._update_route(next_location)
+                self._update_possible_locations()
                 
             self.tour_complete = True
             
@@ -47,36 +57,22 @@ class Ant_Colony:
             for possbile_next_location in self.possible_locations:
                 
                 tau = float(self.pheromone_map[self.location][possbile_next_location])
-                eta = Q/self._get_total_distance()
-                
+                eta = Q/self.distance_callback(self.location, possbile_next_location)
+                   
                 kappa = (self.remaining_capacity + self.demand[possbile_next_location])/self.capacity 
-                kappa = 0 if kappa > 1 else kappa
-                
-                attractiveness.append((tau**self.alpha)*(eta**self.beta)*(kappa**self.gamma))
-                total += attractiveness[possbile_next_location]
+#                kappa = 0 if kappa > 1 else kappa
+
+                v = (tau**self.alpha)*(eta**self.beta)*(kappa**self.gamma)
+                attractiveness.append(v)
+                total += v
             
-            # The following is used to to deal with the scenario, though rare, when total is 0
-            if total == 0.0:
-                import math
-                import struct
-                
-                def next_up(x):
-                    if math.isnan(x) or (math.isinf(x) and x > 0):
-                        return x
-                    
-                    if x == 0.0:
-                        x = 0.0
-         
-                    n = struct.unpack('<q', struct.pack('<d', x))[0]
-                    n += 1 if n >= 0 else -1
-                    return struct.unpack('<d', struct.pack('<q', n))[0]
-					
-                for key in attractiveness:
-                    attractiveness[key] = next_up(attractiveness[key])
-                    total = next_up(total)
-                
-            attractiveness = np.array(attractiveness)/total
-            return np.random.choice(self.possible_locations, 1, attractiveness)
+            if np.abs(total-0.0)<1e-7:
+                choice = np.random.choice(a=np.arange(len(self.possible_locations)), size=1)[0]
+            else:    
+                attractiveness = np.array(attractiveness)/total
+                choice = np.random.choice(a=np.arange(len(self.possible_locations)), size=1, p=attractiveness)[0]
+
+            return self.possible_locations[choice]
                
         def get_tour(self):
             if self.tour_complete:
@@ -88,17 +84,21 @@ class Ant_Colony:
                 return self.distance_travelled
             return None
         
-        def _update_route_n_distance(self, new):
-            '''
-            new: next location
-            '''
-            self.route.append(new)
-            self.possible_locations.remove(new)
-            self.distance_travelled += float(self.distance_callback(self.location, new))
+        def _update_route(self, new):
+            self.route.append(new)         
             self.location = new
-        
-        def _traverse(self, current_location, next_location):
-            self._update_route_n_distance(next_location)
+            self.remaining_capacity -= self.demand[new]
+                    
+        def _update_distance(self, new):
+            self.distance_travelled += float(self.distance_callback(self.location, new))
+            
+        def _update_possible_locations(self):
+            curr_capacity = self.remaining_capacity
+            possible_locations = []
+            for location in self.possible_locations:
+                if (curr_capacity - self.demand[location] >= 0) and (location != self.location):
+                    possible_locations.append(location)
+            self.possible_locations = possible_locations
             
         
     def __init__(self, nodes, distance_callback, capacity, demand, start=None, elitist_num = 5, ant_count=50, alpha=5, beta=5, gamma=5, 
@@ -253,7 +253,7 @@ class Ant_Colony:
         if (type(gamma) is not int) and type(gamma) is not float:
             raise TypeError("alpha must be int or float")
     		
-        if alpha < 0:
+        if gamma < 0:
             raise ValueError("alpha must be >= 0")
     		
         self.gamma = float(gamma)
@@ -302,13 +302,13 @@ class Ant_Colony:
         
     def _init_ants(self, start_location):
         if self.first_pass:
-            return [self.Ant(self.pheromone_map, start_location, self.nodes.keys(), self.deamnd, 
+            return [self.Ant(self.pheromone_map, start_location, list(self.nodes.keys()), self.deamnd, 
                     self.capacity, self.distance_callback, self.pheromone_evaporation_coefficient,
                     self.alpha, self.beta, self.gamma, first_pass=True) for _ in range(self.ant_count)]
         
         else:
             for ant in self.ants:
-                ant.__init__(self.pheromone_map, start_location, self.nodes.keys(), self.deamnd, 
+                ant.__init__(self.pheromone_map, start_location, list(self.nodes.keys()), self.deamnd, 
                     self.capacity, self.distance_callback, self.pheromone_evaporation_coefficient,
                     self.alpha, self.beta, self.gamma)
         
@@ -330,13 +330,12 @@ class Ant_Colony:
         route = ant.get_tour()
         for i in range(len(route)-1):
              curr_pher = float(self.ant_updated_pheromone_map[route[i], route[i+1]])
-             new_pher = self.pheromone_constant/ant.get_distance_traveled()
+             new_pher = self.pheromone_constant/ant.get_total_distance()
              self.ant_updated_pheromone_map[route[i], route[i+1]] = curr_pher + new_pher
              self.ant_updated_pheromone_map[route[i+1], route[i]] = curr_pher + new_pher
             
     def solve(self):
-        for i in self.iterations:
-            
+        for i in range(self.iterations):
             for ant in self.ants:
                 ant.start()
             
@@ -362,12 +361,12 @@ class Ant_Colony:
             if self.first_pass:
                 self.first_pass = False
             
-            self._init_ants(self.start)
+            self._init_ants(self.start)#+i%4)
             self.ant_updated_pheromone_map = np.zeros((len(self.nodes), len(self.nodes))) 
-            
-            result = []
-            
-            for id in self.shortest_path_seen:
-                result.append(self.id_to_key[id])
-            
-            return result
+        
+        result = []
+        
+        for id in self.shortest_path_seen:
+            result.append(self.id_to_key[id])
+        
+        return result
