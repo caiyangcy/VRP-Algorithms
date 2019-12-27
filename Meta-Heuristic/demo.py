@@ -54,6 +54,12 @@ def demo_Ant():
                 new_demand.append(demand[i])
         new_demand = np.array(new_demand)        
         remaining_customers = remaining_customers_2.copy()
+        
+def demo_Tabu():
+    None
+    
+def demo_SA():
+    None
 
 if __name__ == "__main__":
     demo_Ant()
