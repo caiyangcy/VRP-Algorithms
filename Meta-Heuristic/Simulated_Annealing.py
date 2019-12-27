@@ -93,7 +93,7 @@ class SA:
                         best_solution = current_solution
                         best_cost = current_cost
                 else:
-                    random = np.random.random_sample() # uniform distribution or others?
+                    random = np.random.random_sample() # Boltzmann
                     if random < (np.e)**(-delta_cost/T):
                         current_solution = new_solution
                         current_cost = new_cost
