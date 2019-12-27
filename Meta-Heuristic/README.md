@@ -138,6 +138,36 @@ The implementation of tabu search uses memory structures that describe the visit
 
 The initial solution is typically created with some cheapest insertion heuristic. After creating an initial solution, an attempt is made to improve it using local search with one or more neighborhood structures and a best-accept strategy. Most of the neighborhoods used are well known and were previously introduced in the context of various construction and improvement heuristics.
 
+There three different memory structures used for tabu search: short term, intermediate term and long term.
+
+https://www.scirp.org/pdf/AJOR20120200002_63598589.pdf
+
+**Short term memory structure** are used in tabu search to prevent the search from re-visiting solutions that it has visited in the immediate past. They are normally stored as a collection of forbidden moves in a list called the tabu list. Each move in the tabu list remains in the list for a pre-specified number of tabu search iterations. This number is called its tabu tenure. The tabu tenure are divided into static and random ones. Static tenure refers to a fixed value or deterministiclly changed value based on solution/problem specific parameter while random tenure is about generation from a pre-defined range of value. However a general generation of tabu tenure value has not been found yet. Some authors used functional value but only linear and logarithmtic functions are tried.
+
+**Intermediate term momery structure** are used in tabu search to **intensify** the search by restricting it to promising regions of the solution space. It has four basic categories: 
+
+* **IT1**: Edges that occur frequently in low cost tours are forced into candidate tours for next few iterations.
+
+* **IT2**: The search is re-started with a tour that was one of the lower cost tours found in previous iterations. 
+
+* **IT3**:  Higher probabilities are assigned to include the edges common to previously encountered low cost tours in a probabilistic tabu search. 
+
+* **IT4**: Changing tabu tenure (in comparison to existing tenure value) whenever a local optimum is reached. 
+
+**Long term memory structure** are used to diversify the search to new regions in the solution space. It has the following strategies (not exhaustive): 
+
+* **LT1** is a frequency based diversification scheme implemented by adding a penalty value to the cost of each edge. The penalty is proportional to the number of times the edge appeared in previously visited tours. The objective here is to create a disincentive for including edges that were often encountered previously. 
+
+* **LT2** is a modification of strategy LT1, in which the penalty value also includes terms that are not dependent on frequency measures. 
+
+* **LT3** attains diversification by changing the way in which tours are evaluated in order to move the search to new parts of the search space. It may also involve changing the move being used in the search. 
+
+* **LT4** creates a diversification mechanism by changing the stopping criterion to allow more non-improving moves. 
+
+* **LT5** is a diversification scheme which restarts tabu search iteration from different initial solutions. It helps to change the initial search space and creates a chance to reach to a different solution region. 
+
+* **LT6** is used in some papers for diversification if no improvement is seen in the best tour cost for certain number of iterations, diversification is attained by adding a parameter called influence measure to the tour costs for neighboring solutions. The influence measure measures the degree of similarity between two consecutive solutions. 
+
 ## Granular Tabu
 
 It turns out the longer the distance is, the less likely it is to belong to the optimal solution. Hence by defining *granularity threshold*, several unpromising solutions will never be considered by the search process. The authors proposed ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;\nu&space;=&space;\beta&space;\bar{c}), where ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;\beta) is a sparsification parametetr typically chosen from interval [1.0, 2.0] (the percentage of remaining edges in the graph tends to be in the 10% – 20%) and ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;\bar{c}) is the averaged edge length of a solution obtained by a fast heuristic. The value of ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;\beta) is dynamically adjusted whenever the incumbent has not improved for a set number of iterations, and periodically decreased to its initial value. Neighbor solutions are obtained by performing a limited number of edge exchanges within the same route or between two routes.
