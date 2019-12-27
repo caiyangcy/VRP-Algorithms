@@ -10,7 +10,7 @@ class Tabu:
         self.customer = customer
         self.demand = demand
         self.TABU_TENURE = tabu_tenure
-        self.TABU_SIZE = tabu_szie
+        self.TABU_SIZE = tabu_size
         self.s0 = self._generate_init_solution()
         
     def _euclidean_dist(self, a, b):
@@ -68,6 +68,8 @@ class Tabu:
         return sum_distance
     
     def tabu_search(self):
+        start_time = time.time()
+        
         stop = False
         best_solution_kept = 0
         best_solution = self.s0
@@ -92,5 +94,7 @@ class Tabu:
                 
             if best_solution_kept == self.TABU_TENURE:
                 stop = True
-                
+          
+        end_time = time.time()
+        print('\nFinished solving, with total time %s mins \n' % ((end_time - start_time)/60))    
         return best_solution
