@@ -140,7 +140,7 @@ The initial solution is typically created with some cheapest insertion heuristic
 
 There three different memory structures used for tabu search: short term, intermediate term and long term.
 
-https://www.scirp.org/pdf/AJOR20120200002_63598589.pdf
+Based on this [literature review](https://www.scirp.org/pdf/AJOR20120200002_63598589.pdf):
 
 **Short term memory structure** are used in tabu search to prevent the search from re-visiting solutions that it has visited in the immediate past. They are normally stored as a collection of forbidden moves in a list called the tabu list. Each move in the tabu list remains in the list for a pre-specified number of tabu search iterations. This number is called its tabu tenure. The tabu tenure are divided into static and random ones. Static tenure refers to a fixed value or deterministiclly changed value based on solution/problem specific parameter while random tenure is about generation from a pre-defined range of value. However a general generation of tabu tenure value has not been found yet. Some authors used functional value but only linear and logarithmtic functions are tried.
 
