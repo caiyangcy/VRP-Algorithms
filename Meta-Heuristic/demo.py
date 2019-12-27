@@ -56,6 +56,10 @@ def demo_Ant():
         remaining_customers = remaining_customers_2.copy()
         
 def demo_Tabu():
+    '''
+    This demo is ... cheating
+    Assume the sum of all customers' demand is no bigger than the capacity of the vehicle
+    '''
     None
     
 def demo_SA():
