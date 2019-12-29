@@ -69,4 +69,4 @@ David Silver's reinforcement learning [course](http://www0.cs.ucl.ac.uk/staff/d.
 
 pgrouting [Github repo](https://github.com/pgRouting/pgrouting/wiki/VRP-Algorithms)
 
-
+[Slides](https://imada.sdu.dk/~marco/Teaching/Fall2008/DM87/Slides/dm87-lec19-2x2.pdf)
