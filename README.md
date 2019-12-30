@@ -58,6 +58,8 @@ Note that the following hyperlinks in sub-sections may not work
 
 NIPS paper [Reinforcement Learning for Solving the Vehicle Routing Problem](https://arxiv.org/abs/1802.04240)
 
+Pointer Network.
+
 ## Additional Resources
 VRP [Slides](http://www.discovery.dist.unige.it/didattica/LS/VRP.pdf) by **Massimo Paolucci**.
 
@@ -69,4 +71,4 @@ David Silver's reinforcement learning [course](http://www0.cs.ucl.ac.uk/staff/d.
 
 pgrouting [Github repo](https://github.com/pgRouting/pgrouting/wiki/VRP-Algorithms)
 
-[Slides](https://imada.sdu.dk/~marco/Teaching/Fall2008/DM87/Slides/dm87-lec19-2x2.pdf)
+[Slides](https://imada.sdu.dk/~marco/Teaching/Fall2008/DM87/Slides/dm87-lec19-2x2.pdf) of some aspects of VRP.
