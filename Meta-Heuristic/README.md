@@ -183,3 +183,6 @@ An adaptative memory is a pool of good solutions that is dynamically updated thr
 ## Kelly and Xu
 
 In this case, [Kelly and Xu 1996] considered swaps of vertices between two routes, a global repositioning of some vertices into other routes, and local routes improvements. The global repositioning strategy solves a network flow model to optimally relocate given numbers of vertices into different routes. Approximations are developed to compute the ejection and insertion costs, taking vehicle capacity into account. Route optimizations are performed by means of 3-opt exchanges. The algorithm is governed by several parameters which are dynamically adjusted through the search. A pool of best solutions is memorized and periodically used to reinitiate the search with new parameter values. Overall, this algorithm produced several best known solutions on benchmark instances, but it is fair to say that it is not as effective as some other TS implementations. It tends to require a meaty computational effort and properly tuning its many parameters can be problematic.
+
+# TABUROUTE
+
