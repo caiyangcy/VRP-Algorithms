@@ -136,7 +136,7 @@ Tabu search enhances the performance of local search by relaxing its basic rule.
 
 The implementation of tabu search uses memory structures that describe the visited solutions or user-provided sets of rules. If a potential solution has been previously visited within a certain short-term period or if it has violated a rule, it is marked as "tabu" (forbidden) so that the algorithm does not consider that possibility repeatedly.
 
-The initial solution is typically created with some cheapest insertion heuristic. After creating an initial solution, an attempt is made to improve it using local search with one or more neighborhood structures and a best-accept strategy. Most of the neighborhoods used are well known and were previously introduced in the context of various construction and improvement heuristics.
+The initial solution is typically created with some cheapest insertion heuristic. After creating an initial solution, an attempt is made to improve it using local search with one or more neighborhood structures and a best-accept strategy. Most of the neighborhoods used are well known and were previously introduced in the context of various construction and improvement heuristics. **Aspiration criteria** is often utilised in tabu search. It refers to the overrule of tabu status if the tabu solution found has a better objective value than the current solution.
 
 There three different memory structures used for tabu search: short term, intermediate term and long term.
 
@@ -186,3 +186,6 @@ In this case, [Kelly and Xu 1996] considered swaps of vertices between two route
 
 # TABUROUTE
 
+Original paper: [ A Tabu Search Heuristic for the Vehicle Routing Problem](https://www.jstor.org/stable/pdf/2661622.pdf?refreqid=excelsior%3A00ee7932bb4ba6da610c30d55d5dcdc8) by Michel Gendreau, Alain Hertz and Gilbert Laporte.
+
+Refer to this [slides](https://imada.sdu.dk/~marco/Teaching/Fall2008/DM87/Slides/dm87-lec19-2x2.pdf) in the home page for a quick overview. The details are skipped here due to the limit of latex of Github.
