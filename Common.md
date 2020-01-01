@@ -47,6 +47,26 @@ Taken from the paper:
 
 Paper: [Limited Discrepancy Search](https://pdfs.semanticscholar.org/efa5/6b710ff3c6d8b2666971d07c311eeb6c5b40.pdf?_ga=2.176917669.1045710749.1577795756-1357849254.1576571462). Willia m D. Harvey and Matthew L. Ginsberg. 
 
-## lambda interchange
+## λ-interchange
+
+Inter-route. It's defined by Osman (Metastrategy simulated annealing and tabu search for combinatorial optimization problems). The basic idea is swap the two subsets of two different route, whose size is bouded by λ.
 
 ## k-opt
+
+Intra-route. Swap k non-adjacent edges. 2-opt and 3-opt are the mostly common one. Possible changes: O(n^k)
+
+## Or opt
+
+Inter-route. Relocate 1, 2, or 3 consecutive vertices. Possisble changes for 2 consecutive: O(n^2). 
+
+## Farthest Inesrtion
+
+Refer to this [website](https://users.cs.cf.ac.uk/C.L.Mumford/howard/FarthestInsertion.html)
+
+# First Improving (FI)
+
+Accept the first improved solution.
+
+# Best Improving (BI)
+
+Accept the best improved solution.
