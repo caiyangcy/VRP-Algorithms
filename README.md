@@ -76,3 +76,6 @@ David Silver's reinforcement learning [course](http://www0.cs.ucl.ac.uk/staff/d.
 pgrouting [Github repo](https://github.com/pgRouting/pgrouting/wiki/VRP-Algorithms)
 
 [Slides](https://imada.sdu.dk/~marco/Teaching/Fall2008/DM87/Slides/dm87-lec19-2x2.pdf) of some aspects of VRP.
+
+There are 3 Github repos on TSP, which are taken from the appendix of the paper [Pointer Network](https://arxiv.org/pdf/1506.03134.pdf).
+[1](https://github.com/dmishin/tsp-solver), [2](https://github.com/samlbest/traveling-salesman), [3](https://github.com/beckysag/traveling-salesman).
