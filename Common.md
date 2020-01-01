@@ -16,21 +16,16 @@ Paper: [New Insertion and Postoptimization Procedures for the Traveling Salesman
 
 GENI is a technique used for for inter-route local search. It includes two types of insertion. The demos of Type I insertion and Type II insertion are as follows(taken from the two paper above).
 
-![]()
+![](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/GENI_types.png)
 
-![]()
-![]()
+![](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/Type_I_GENI.png)
+![](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/Type_II_GENI.png)
 
 Refer to the second paper for the details of the GENI algorithm.
 
 ## Unstringing and Stringing (US)
 
 US is post-optimization algorithm which consists of removing a vertex from a feasible solution and reinserting it back. Stringing procedure is similar to GENI and Unstringing is just reverse. The demos of Type I Unstringing and Type II Unstringing are as follow (taken from the second paper):
-
-![]()
-
-![]()
-![]()
 
 Refer to the second paper for the detail of the US algorithm.
 
