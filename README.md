@@ -58,6 +58,8 @@ Note that the following hyperlinks in sub-sections may not work
 
 [Pointer Network](https://arxiv.org/pdf/1506.03134.pdf) is specillay designed for the combinatorial optimization.
 
+[Neural Combinatorial Optimization with Reinforcement Learning](https://arxiv.org/pdf/1611.09940.pdf)
+
 NIPS paper [Reinforcement Learning for Solving the Vehicle Routing Problem](https://arxiv.org/abs/1802.04240)
 
 ICLR Paper of 2019 [Attention ! Learn to Sovle Routing Problem](https://openreview.net/pdf?id=ByxBFsRqYm) is a recent paper proposed based on attention to solve the similar problem.
