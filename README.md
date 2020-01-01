@@ -56,9 +56,11 @@ Note that the following hyperlinks in sub-sections may not work
   
 ## Deep Learning / Reinforcement Learning Approaches
 
+[Pointer Network](https://arxiv.org/pdf/1506.03134.pdf) is specillay designed for the combinatorial optimization.
+
 NIPS paper [Reinforcement Learning for Solving the Vehicle Routing Problem](https://arxiv.org/abs/1802.04240)
 
-Pointer Network.
+ICLR Paper of 2019 [Attention ! Learn to Sovle Routing Problem](https://openreview.net/pdf?id=ByxBFsRqYm) is a recent paper proposed based on attention to solve the similar problem.
 
 ## Additional Resources
 VRP [Slides](http://www.discovery.dist.unige.it/didattica/LS/VRP.pdf) by **Massimo Paolucci**.
