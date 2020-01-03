@@ -29,6 +29,8 @@ Step 2. Route Extension (Sequential version)
   * If not feasible merge exists, consider the next route and reapply the same operations.
   * Stop when not route merge is feasible.
 
+Example taken from [Berkeley website](http://courses.ieor.berkeley.edu/ieor151/lecture_notes/ieor151_lec18.pdf).
+
 ## Matching Based
 
 **Paper**: 
