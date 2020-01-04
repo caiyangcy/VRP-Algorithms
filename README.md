@@ -64,6 +64,8 @@ NIPS paper [Reinforcement Learning for Solving the Vehicle Routing Problem](http
 
 ICLR Paper of 2019 [Attention ! Learn to Sovle Routing Problem](https://openreview.net/pdf?id=ByxBFsRqYm) is a recent paper proposed based on attention to solve the similar problem.
 
+Meanwhile, DL can also be applied to some local search algorithm.
+
 ## Additional Resources
 VRP [Slides](http://www.discovery.dist.unige.it/didattica/LS/VRP.pdf) by **Massimo Paolucci**.
 
