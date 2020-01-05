@@ -4,7 +4,7 @@ This is a short intro on difference types of variants of VRP. This may be differ
 
 ## Capacitated VRP(CVRP)
 
-The vehicle has a limited capacity.
+The vehicle has a limited capacity. There are some other versions of CVRP, which also set up a limit on the maximum distance for each route.
 
 ## VRP with Time Window(VRPTW)
 
