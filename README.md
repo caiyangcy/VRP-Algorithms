@@ -64,7 +64,7 @@ NIPS paper [Reinforcement Learning for Solving the Vehicle Routing Problem](http
 
 ICLR Paper of 2019 [Attention ! Learn to Sovle Routing Problem](https://openreview.net/pdf?id=ByxBFsRqYm) is a recent paper proposed based on attention to solve the similar problem.
 
-Meanwhile, DL can also be applied to some local search algorithm.
+[Neural Large Neighborhood Search for the Capacitated Vehicle Routing Problem](https://arxiv.org/pdf/1911.09539.pdf) by Andre Hottung and Kevin Tierney. The authors apply DL to LNS (NLNS) and train the model based on different destroy operators and let the model learn the complex repair operator. The authors have shoen their method outperformed the two models mentioned above in batch search.
 
 ## Additional Resources
 VRP [Slides](http://www.discovery.dist.unige.it/didattica/LS/VRP.pdf) by **Massimo Paolucci**.
