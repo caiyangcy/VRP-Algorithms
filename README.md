@@ -81,3 +81,5 @@ pgrouting [Github repo](https://github.com/pgRouting/pgrouting/wiki/VRP-Algorith
 
 There are 3 Github repos on TSP, which are taken from the appendix of the paper [Pointer Network](https://arxiv.org/pdf/1506.03134.pdf).
 [1](https://github.com/dmishin/tsp-solver), [2](https://github.com/samlbest/traveling-salesman), [3](https://github.com/beckysag/traveling-salesman).
+
+[LKH3 Solver](http://akira.ruc.dk/~keld/research/LKH-3/LKH-3_REPORT.pdf), which is one of powerful solvers that can be used for many variants of TSP and VRP (and applied to large size).
