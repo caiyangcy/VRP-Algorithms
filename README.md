@@ -62,9 +62,13 @@ Note that the following hyperlinks in sub-sections may not work
 
 NIPS paper [Reinforcement Learning for Solving the Vehicle Routing Problem](https://arxiv.org/abs/1802.04240)
 
-ICLR Paper of 2019 [Attention ! Learn to Sovle Routing Problem](https://openreview.net/pdf?id=ByxBFsRqYm) is a recent paper proposed based on attention to solve the similar problem.
+ICLR Paper of 2019 [Attention, Learn to Sovle Routing Problem](https://openreview.net/pdf?id=ByxBFsRqYm) is a recent paper proposed based on attention to solve the similar problem.
 
 [Neural Large Neighborhood Search for the Capacitated Vehicle Routing Problem](https://arxiv.org/pdf/1911.09539.pdf) by Andre Hottung and Kevin Tierney. The authors apply DL to LNS (NLNS) and train the model based on different destroy operators and let the model learn the complex repair operator. The authors have shoen their method outperformed the two models mentioned above in batch search.
+
+[Learning-Based Iterative Method for Solving Vehicle Routing Problems](https://openreview.net/pdf?id=BJe1334YDH), which is still under review now.
+
+[Learning to Perform Local Rewriting for Combinatorial Optimization](https://arxiv.org/pdf/1810.00337.pdf) by Xinyun Chen and Yuandong Tian
 
 ## Additional Resources
 VRP [Slides](http://www.discovery.dist.unige.it/didattica/LS/VRP.pdf) by **Massimo Paolucci**.
