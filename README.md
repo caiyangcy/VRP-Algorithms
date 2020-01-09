@@ -76,6 +76,8 @@ ICLR Paper of 2019 [Attention, Learn to Sovle Routing Problem](https://openrevie
 
 [Learning to Solve NP-Complete Problems: A Graph Neural Network for Decision TSP](https://arxiv.org/pdf/1809.02721.pdf) by Marcelo Prates, Pedro H. C. Avelar, Henrique Lemos, Luis C. Lamb and Moshe Y. Vardi
 
+GNN and attention mechanism may be prerequisite for those paper above.
+
 ## Additional Resources
 VRP [Slides](http://www.discovery.dist.unige.it/didattica/LS/VRP.pdf) by **Massimo Paolucci**.
 
