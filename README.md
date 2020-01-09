@@ -56,6 +56,8 @@ Note that the following hyperlinks in sub-sections may not work
   
 ## Deep Learning / Reinforcement Learning Approaches
 
+The following is a collection of some modern approaches on combinatorial problems mainly focusing on TSP/VRP.
+
 [Pointer Network](https://arxiv.org/pdf/1506.03134.pdf) by Oriol Vinyals, Meire Fortunato and Navdeep Jaitly is specillay designed for the combinatorial optimization. In this paper, the autohers proposed a new neural nextwork called pointer network which outputs a permutation of the input. However, authors trained their model in a supervised way, which make use of heuristic to get the label. The disadvantage of this is that the labels(optimal solutinos) are hard to acquire when the size of the problem is too large. Meanwhile. the quality of the model is tied to the supervised label. If the labels are not good enough, the model is not able to get better solution.
 
 [Neural Combinatorial Optimization with Reinforcement Learning](https://arxiv.org/pdf/1611.09940.pdf) by Irwan Bello, Hieu Pham, Quoc V. Le, Mohammad Norouzi, Samy Bengio. The authors made use of reinfoecement learning based on actor-critic
@@ -69,6 +71,10 @@ ICLR Paper of 2019 [Attention, Learn to Sovle Routing Problem](https://openrevie
 [Learning-Based Iterative Method for Solving Vehicle Routing Problems](https://openreview.net/pdf?id=BJe1334YDH), which is still under review now.
 
 [Learning to Perform Local Rewriting for Combinatorial Optimization](https://arxiv.org/pdf/1810.00337.pdf) by Xinyun Chen and Yuandong Tian
+
+[Learning Combinatorial Optimization Algorithms over Graphs](https://arxiv.org/pdf/1704.01665.pdf) by Hanjun Dai, Elias B. Khalil, Yuyu Zhang, Bistra Dilkina, Le Song.
+
+[Learning to Solve NP-Complete Problems: A Graph Neural Network for Decision TSP](https://arxiv.org/pdf/1809.02721.pdf) by Marcelo Prates, Pedro H. C. Avelar, Henrique Lemos, Luis C. Lamb and Moshe Y. Vardi
 
 ## Additional Resources
 VRP [Slides](http://www.discovery.dist.unige.it/didattica/LS/VRP.pdf) by **Massimo Paolucci**.
