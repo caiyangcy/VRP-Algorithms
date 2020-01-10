@@ -56,6 +56,9 @@ Note that the following hyperlinks in sub-sections may not work
   
 ## Deep Learning / Reinforcement Learning Approaches
 
+Here is a survey on the combinatorial optimization, which is a very general topic: [Machine Learning for Combinatorial Optimization:
+a Methodological Tour d’Horizon](https://arxiv.org/pdf/1811.06128.pdf) by Yoshua Bengio, Andrea Lodi, and Antoine Prouvost
+
 The following is a collection of some modern approaches on combinatorial problems mainly focusing on TSP/VRP.
 
 [Pointer Network](https://arxiv.org/pdf/1506.03134.pdf) by Oriol Vinyals, Meire Fortunato and Navdeep Jaitly is specillay designed for the combinatorial optimization. In this paper, the autohers proposed a new neural nextwork called pointer network which outputs a permutation of the input. However, authors trained their model in a supervised way, which make use of heuristic to get the label. The disadvantage of this is that the labels(optimal solutinos) are hard to acquire when the size of the problem is too large. Meanwhile. the quality of the model is tied to the supervised label. If the labels are not good enough, the model is not able to get better solution.
