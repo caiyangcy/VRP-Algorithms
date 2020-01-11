@@ -82,6 +82,9 @@ ICLR Paper of 2019 [Attention, Learn to Sovle Routing Problem](https://openrevie
 [An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem](https://arxiv.org/pdf/1906.01227.pdf) by Chaitanya K. Joshi, Thomas Laurent and  Xavier Bresson.
 
 ## Additional Resources
+
+A general overview on VRP algorithms: [Classical and modern heuristics for the vehicle routing problem(https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1475-3995.2000.tb00200.x)
+
 VRP [Slides](http://www.discovery.dist.unige.it/didattica/LS/VRP.pdf) by **Massimo Paolucci**.
 
 SP [Slides](http://www2.imm.dtu.dk/courses/02735/sppintro.pdf) by **Jesper Larsen**, which may be useful for understanding the petal algorithm.
