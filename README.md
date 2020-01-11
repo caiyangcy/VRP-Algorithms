@@ -83,7 +83,7 @@ ICLR Paper of 2019 [Attention, Learn to Sovle Routing Problem](https://openrevie
 
 ## Additional Resources
 
-A general overview on VRP algorithms: [Classical and modern heuristics for the vehicle routing problem(https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1475-3995.2000.tb00200.x)
+A general overview on VRP algorithms: [Classical and modern heuristics for the vehicle routing problem](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1475-3995.2000.tb00200.x)
 
 VRP [Slides](http://www.discovery.dist.unige.it/didattica/LS/VRP.pdf) by **Massimo Paolucci**.
 
