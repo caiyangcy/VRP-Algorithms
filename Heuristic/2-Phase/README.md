@@ -16,6 +16,8 @@ The following is taken from page 69 of the [slides](http://www.discovery.dist.un
 
 ![sweep_0](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/fisher_demo.png)
 
+The authors propose a geometric method based on the partition of the plane intomconesaccording to the customer weights. The seed points are dummy customers located along therays bisecting the cones.
+
 ## The Sweep Algorithm
 
 Imagine a ray centered at the depot. By rotating the ray, the customers can be divided into multiple clusters. By performing a TSP algorithm on each cluster we can form a solution in the end.
