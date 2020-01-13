@@ -49,6 +49,7 @@ Note that the following hyperlinks in sub-sections may not work
 * [Simulated Annealing](https://github.com/4342315yc/VRP-Algorithms/tree/master/Meta-Heuristic#simulated-annealing)
 * [Tabu Search](https://github.com/4342315yc/VRP-Algorithms/tree/master/Meta-Heuristic#tabu-search)
   * [Granular Tabu](https://github.com/4342315yc/VRP-Algorithms/tree/master/Meta-Heuristic#granular-search)
-  * [The Adaptative Memory Procedure](https://github.com/4342315yc/VRP-Algorithms/tree/master/Meta-Heuristic#the-adaptative-memory-procedure)
+  * [The Adaptive Memory Procedure](https://github.com/4342315yc/VRP-Algorithms/tree/master/Meta-Heuristic#the-adaptative-memory-procedure)
   * [Kelly and Xu](https://github.com/4342315yc/VRP-Algorithms/tree/master/Meta-Heuristic#kelly-and-xu)
+  * [Taburoute](https://github.com/4342315yc/VRP-Algorithms/tree/master/Meta-Heuristic#taburoute)
   
