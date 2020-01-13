@@ -1,7 +1,6 @@
 A collection of algotihms, links and paper and (naive) implementation
 
 # VRP Algorithms
-## Still in progress
 
 A collection of VRP algorithms.
 
