@@ -1,4 +1,4 @@
-# Reference Used in this repo
+# References & Useful Resources
 
 * A general overview on VRP algorithms: [Classical and modern heuristics for the vehicle routing problem](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1475-3995.2000.tb00200.x)
 
