@@ -128,6 +128,15 @@ Also an example of annealing on CVRP (I forgot which paper this image was taken 
 
 # Tabu Search
 
+Reference to Tabu search:
+
+[Tabu Search Part I](http://leeds-faculty.colorado.edu/glover/TS%20-%20Part%20I-ORSA-aw.pdf)
+
+[Tabu Search Part II](http://leeds-faculty.colorado.edu/glover/TS%20-%20Part%20II-ORSA-aw.pdf)
+
+[A User's Guide to Tabu Search](https://link.springer.com/content/pdf/10.1007%2FBF02078647.pdf)
+
+
 Tabu search is a metaheuristic search method employing local search methods used for mathematical optimization.
 
 Local (neighborhood) searches take a potential solution to a problem and check its immediate neighbors (that is, solutions that are similar except for very few minor details) in the hope of finding an improved solution. Local search methods have a tendency to become stuck in suboptimal regions or on plateaus where many solutions are equally fit.
@@ -174,9 +183,9 @@ It turns out the longer the distance is, the less likely it is to belong to the 
 
 The authors proposed a procedure capable of examining all potential exchanges in ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;O(|E(\nu)|)), where ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;E(\nu)&space;=&space;\{(i,j)&space;\in&space;E&space;:&space;c_{ij}&space;\le&space;\nu\}&space;\bigcup&space;I) and ![](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;\large&space;I) is the set od important edges such as the inevitable edges between customers and deopts or the edged that are very likely to show up in the best edges.
 
-## The Adaptative Memory Procedure
+## The Adaptive Memory Procedure
 
-An adaptative memory is a pool of good solutions that is dynamically updated throughout the search process. Periodically, some elements of these solutions are extracted from the pool and combined differently to produce new good solutions. When selecting these routes, care must be taken to avoid including the same customer twice in a solution. This restriction means that the selection process will often terminate with a partial solution that will have to be completed using a construction heuristic. In the example depicted in the figure below, extracting routes A, D and H from a memory of two solutions results in a partial solution. Rochat and Taillard have shown that the application of an adaptative memory procedure can enhance a search strategy. This has enabled them to obtain two new best solutions on the 14 standard VRP benchmark instances.
+An adaptive memory is a pool of good solutions that is dynamically updated throughout the search process. Periodically, some elements of these solutions are extracted from the pool and combined differently to produce new good solutions. When selecting these routes, care must be taken to avoid including the same customer twice in a solution. This restriction means that the selection process will often terminate with a partial solution that will have to be completed using a construction heuristic. In the example depicted in the figure below, extracting routes A, D and H from a memory of two solutions results in a partial solution. Rochat and Taillard have shown that the application of an adaptative memory procedure can enhance a search strategy. This has enabled them to obtain two new best solutions on the 14 standard VRP benchmark instances.
 
 ![](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/Adaptative_memory_demo.png)
 
@@ -186,6 +195,6 @@ In this case, [Kelly and Xu 1996] considered swaps of vertices between two route
 
 ## TABUROUTE
 
-Original paper: [ A Tabu Search Heuristic for the Vehicle Routing Problem](https://www.jstor.org/stable/pdf/2661622.pdf?refreqid=excelsior%3A00ee7932bb4ba6da610c30d55d5dcdc8) by Michel Gendreau, Alain Hertz and Gilbert Laporte.
+Original paper: [A Tabu Search Heuristic for the Vehicle Routing Problem](https://www.jstor.org/stable/pdf/2661622.pdf?refreqid=excelsior%3A00ee7932bb4ba6da610c30d55d5dcdc8) by Michel Gendreau, Alain Hertz and Gilbert Laporte.
 
 Refer to this [slides](https://imada.sdu.dk/~marco/Teaching/Fall2008/DM87/Slides/dm87-lec19-2x2.pdf) in the home page for a quick overview. The details are skipped here due to the limit of latex of Github.
