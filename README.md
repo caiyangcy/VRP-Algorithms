@@ -6,7 +6,7 @@ A collection of VRP algorithms. Refer to [this page](https://github.com/4342315y
 
 The following is the overview algorithms based on [NEO](http://neo.lcc.uma.es/vrp/solution-methods/). Note that the follwing image is just a simplified version of the overview of VRP family. The actual variants and algorithms are actually more than the following.
 
-![Overview](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/Overview.png)
+![Overview](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/VRP_Overview.png)
 
 ## Variants
 * [CVRP](https://github.com/4342315yc/VRP-Algorithms/blob/master/Variants/README.md#capacitated-vrpcvrp)
