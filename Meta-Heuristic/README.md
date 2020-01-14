@@ -122,7 +122,7 @@ The stopping criteria is usually divided into three cases:
 
 3. ![19](https://latex.codecogs.com/png.latex?\inline&space;\fn_cm&space;k_3) of **T** iterations have been executed.
 
-Also an example of annealing on CVRP (I forgot which paper this image was taken from):
+Also an example of annealing on CVRP (taken from [here](https://pdfs.semanticscholar.org/d80e/a21777ffd9ff41a96303fdf672bac8fe5753.pdf?_ga=2.150665974.1997366065.1577435548-1357849254.1576571462) ):
 
 ![6](https://github.com/4342315yc/VRP-Algorithms/blob/master/Images/cvrp_annealing.png)
 
